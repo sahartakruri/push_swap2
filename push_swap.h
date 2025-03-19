@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 11:21:58 by satakrur          #+#    #+#             */
-/*   Updated: 2025/03/13 14:37:40 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/03/13 16:14:30 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void    ft_swap_b(int *stak_b, int size_b);
 void    ft_push_a_to_b(int *stak_a, int *size_a, int *stak_b,int *size_b);
 void    ft_push_b_to_a(int *stak_a, int *size_a, int *stak_b,int *size_b);
 void    ft_rotate_a(int *stak_a, int size);
+void    ft_rotate_b(int *stak_b, int size);
 void    ft_reverse_rotate_a(int *stak_a, int size);
 int     ft_cton(char *stak);
 int     ft_double_check(int *stak_a, int size_a);

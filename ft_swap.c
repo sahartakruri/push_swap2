@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:36:42 by satakrur          #+#    #+#             */
-/*   Updated: 2025/03/13 14:25:36 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/03/13 16:18:34 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,22 @@ void    ft_rotate_a(int *stak_a, int size)
     stak_a[size - 1] = temp;
     write (1, "ra\n", 3); 
 }
+void    ft_rotate_b(int *stak_b, int size)
+{
+    int temp;
+    int j;
+
+    j = 0;
+    temp = stak_b[0];
+    while (j < size - 1)
+    {
+        stak_b[j] = stak_b[j + 1];
+        j++;
+    }
+    stak_b[size - 1] = temp;
+    write (1, "rb\n", 3); 
+}
+
 void    ft_reverse_rotate_a(int *stak_a, int size)
 {
     int temp;

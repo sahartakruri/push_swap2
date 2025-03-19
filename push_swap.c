@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:04:17 by satakrur          #+#    #+#             */
-/*   Updated: 2025/03/13 15:54:55 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/03/17 12:05:08 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ void    ft_arrange(int *stak_a, int *size_a, int *stak_b, int *size_b, int r)
             i = 0;
             while (i < *size_a)
             {
-                // if (((stak_a[0] * -1)/ r)% 10 == (-k / r) % 10)
-                //     printf("it entered the loop %d\n", k);
                 if ((stak_a[0] / r) % 10 == k || stak_a[0]< 0)
                     {
                         ft_push_a_to_b(stak_a, size_a, stak_b, size_b);
@@ -82,7 +80,6 @@ void    ft_arrange(int *stak_a, int *size_a, int *stak_b, int *size_b, int r)
             }
             k++;
         }
-        // printf("size_b = %d\n size_a= %d\n", size_b, size_a);//
         i = 0;
         while (i++ < *size_b + *size_a)
             ft_push_b_to_a(stak_a, size_a, stak_b, size_b);
@@ -95,16 +92,13 @@ void    ft_arrange_n(int *stak_a, int *size_a, int *stak_b, int *size_b, int r)
      k = 0;
         while (k < 10)
         {
-            // printf("size_a = %d\n",*size_a);
             i = 0;
             while (i < *size_a)
             {
                 if (stak_a[0] < 0)
                 {
-                    printf("it entered the outerloop ******%d\n", k);
                     if (((stak_a[0] * -1)/ r)% 10 == (-k / r) % 10)
                     {
-                        printf("it entered the loop %d\n", k);
                         ft_push_a_to_b(stak_a, size_a, stak_b, size_b);
                         i--;
                     }
@@ -120,8 +114,6 @@ void    ft_arrange_n(int *stak_a, int *size_a, int *stak_b, int *size_b, int r)
             }
             k++;
         }
-        // printf("size_b = %d\n size_a= %d\n", size_b, size_a);//
-        printf("stak_b[0] %d\n size_b= %d\n", stak_b[0], *size_b);//
         i = 0;
         while (i < *size_b)
         {
@@ -160,7 +152,7 @@ void    ft_flip_neg(int *stak_a, int *size_a, int *stak_b, int *size_b, int neg)
         ft_push_b_to_a(stak_a, size_a, stak_b, size_b);
         i--;
     }
-     printf("size_b = %d\n size_a= %d\n number of negative = %d\n stak_b[0]%d\n", *size_b, *size_a, neg, stak_b[0]);//
+    //  printf("size_b = %d\n size_a= %d\n number of negative = %d\n stak_b[0]%d\n", *size_b, *size_a, neg, stak_b[0]);//
 }
 
 void    ft_stak_to_stak(int *stak_a, int *size_a, int *stak_b, int *size_b, int n)
@@ -187,7 +179,7 @@ void    ft_stak_to_stak(int *stak_a, int *size_a, int *stak_b, int *size_b, int 
     }
     if (neg > 0)
         ft_flip_neg(stak_a, size_a, stak_b, size_b, neg);
-    printf("size_b = %d\n size_a= %d\n number of negative = %d\n", *size_b, *size_a, neg);//
+    // printf("size_b = %d\n size_a= %d\n number of negative = %d\n", *size_b, *size_a, neg);//
 }
 
 
@@ -200,7 +192,7 @@ int main(int arc, char **argv)
     int n;
     int i = 1;
     n = ft_longest_digit(argv, size_a);
-    printf("n= %d\n", n);
+    // printf("n= %d\n", n);
     while (i < arc)
     {
         stak_a[i - 1] = ft_cton(argv[i]);
@@ -213,7 +205,7 @@ int main(int arc, char **argv)
     }
     ft_stak_to_stak(stak_a, &size_a, stak_b, &size_b, n);
     write(1, "stak a\n", 7);
-    ft_print(stak_a, size_a); // needs to be modified
+    ft_print(stak_a, size_a);
     write(1, "stak b\n", 7);
     ft_print(stak_b, size_b);
     return (0);

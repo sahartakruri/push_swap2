@@ -9,7 +9,7 @@ OBJS = $(SRCS:.c=.o)
 
 HEADER = ft_printf.h push_swap.h
 
-NAME = push_swap.a
+NAME = push_swap
 
 all : $(NAME)
 
